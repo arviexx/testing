@@ -2,8 +2,8 @@ name: Deploy static content to Pages
 
 on:
   push:
-    branches: ["main"]  # Only run on pushes to the main branch
-  workflow_dispatch:  # Allow manual triggering
+    branches: ["main"]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -26,11 +26,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
         with:
-          enablement: true  # Ensure GitHub Pages is enabled
+          enablement: true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: 'static-site'  # Assuming your static files are in this directory
+          path: 'static-site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
