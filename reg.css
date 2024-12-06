@@ -1,0 +1,169 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: #333;
+}
+
+.container {
+    display: flex;
+    width: 850px;
+    height: 500px;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Welcome Section */
+.welcome-section {
+    flex: 1;
+    background: #f0f4f8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+}
+
+.welcome-section h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.welcome-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+/* Flip Form Section */
+.form-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.form-box {
+    width: 350px;
+    height: 420px; /* Same height for both forms */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+.form-box.flip {
+    transform: rotateY(180deg);
+}
+
+/* Form Styling */
+.form-container {
+    width: 100%;
+    height: 70%; /* Ensure forms fill the container */
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background: white;
+       border-radius: 10px ;
+    margin-top: 9%;
+   
+}
+
+/* Adjust the front and back forms */
+#signup-form {
+    transform: rotateY(0deg); 
+    margin-left: -8.7%;
+    /* Default front */
+}
+
+#login-form {
+    transform: rotateY(180deg);
+    margin-left: -9% /* Initially hidden */
+}
+
+/* Input Fields */
+input {
+    width: 80%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Buttons */
+button {
+    width: 87%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Toggle Text */
+p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+p span {
+    color: #007bff;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+p span:hover {
+    color: #0056b3;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+    }
+
+    .welcome-section {
+        border-right: none;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .form-section {
+        perspective: none;
+    }
+}

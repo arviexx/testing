@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Form with Welcome</title>
+    <link rel="stylesheet" href="reg.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side: Welcome Message -->
+        <div class="welcome-section">
+            <h1>Welcome</h1>
+            <p>Sign up or log in to access your account.</p>
+        </div>
+
+        <!-- Right Side: Flip Form -->
+        <div class="form-section">
+            <div class="form-box">
+                <!-- Sign Up Form -->
+                <div id="signup-form" class="form-container">
+                    <h2>Sign Up</h2>
+                    <input type="text" placeholder="Username" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Sign Up</button>
+                    <p>Already have an account? <span id="show-login">Log In</span></p>
+                </div>
+
+                <!-- Log In Form -->
+                <div id="login-form" class="form-container">
+                    <h2>Log In</h2>
+                    <input type="text" placeholder="Username" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Log In</button>
+                    <p>Don't have an account? <span id="show-signup">Sign Up</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
